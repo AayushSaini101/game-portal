@@ -1,0 +1,15 @@
+{
+  "name": "gaming-portal",
+  "version": "1.0.0",
+  "description": "SDSLabs' home page to games",
+  "main": "script.js",
+  "dependencies": {
+    "jquery.scrollto": "^2.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rishabh Chhabra",
+  "license": "ISC"
+}
