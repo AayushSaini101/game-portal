@@ -1,0 +1,247 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Istok+Web:400,700);
+@import url(https://fonts.googleapis.com/css?family=Istok+Web:400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: Source Sans Pro; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  color: #fff;
+  text-decoration: initial; }
+
+html, button, select,
+.pure-g [class*="pure-u"] {
+  /* Set your content font stack here: */
+  font-family: Istok Web; }
+
+.bold {
+  font-weight: 700; }
+
+.fixed {
+  position: fixed; }
+
+.left {
+  float: left; }
+
+.center {
+  text-align: center; }
+
+.sideline {
+  display: inline-block; }
+
+.line {
+  height: 96px;
+  width: 7px;
+  background-color: #dd3333;
+  display: inline-block; }
+
+.underline {
+  position: relative; }
+
+.underline:after {
+  content: '';
+  position: absolute;
+  bottom: -45%;
+  left: 2px;
+  width: 6%;
+  border-bottom: 8px solid #dd3333; }
+
+nav {
+  height: 100vh;
+  width: 230px;
+  padding-top: 105px;
+  font-size: 21px;
+  font-height: 32px;
+  z-index: 1; }
+  nav ul {
+    margin-left: 90px; }
+    nav ul li {
+      margin-bottom: 105px;
+      line-height: 38px;
+      position: relative; }
+  nav .active {
+    font-weight: 700;
+    pointer-events: none; }
+    nav .active .circle {
+      height: 15px;
+      width: 15px;
+      left: 59%; }
+      nav .active .circle .inner {
+        width: 9px;
+        height: 9px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: relative;
+        top: 24%;
+        left: 25%; }
+
+header {
+  height: 105px; }
+
+.footer {
+  background-color: #212121;
+  height: 42px;
+  line-height: 42px;
+  position: absolute;
+  width: calc(100% + 230px);
+  left: -230px;
+  bottom: 0px; }
+
+hr {
+  background-color: #636060;
+  border: 0 none;
+  height: 1px;
+  margin-right: 90px;
+  margin-top: 42px; }
+
+section {
+  min-height: 100vh;
+  padding-left: 230px;
+  padding-top: 105px; }
+  section#home {
+    background-image: url("background.png");
+    background-size: cover; }
+  section#ideas {
+    background-color: #262626;
+    position: relative; }
+
+form {
+  margin-bottom: 198px; }
+  form textarea {
+    height: 189px;
+    width: 780px;
+    background-color: inherit;
+    border: 1px solid #a5a5a5;
+    border-radius: 5px;
+    font-family: Source Sans Pro;
+    padding: 21px; }
+  form input {
+    background-color: inherit;
+    border: 1px solid #a5a5a5;
+    height: 47px;
+    padding: 0px;
+    padding-left: 20px; }
+    form input:nth-child(1) {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      width: 290px; }
+    form input:nth-child(2) {
+      width: 330px; }
+  form .submit-button {
+    display: inline-block;
+    background-color: #dd3333;
+    margin-top: 0px;
+    height: 49px;
+    width: 164px; }
+
+.game-card {
+  height: 378px; }
+
+.join {
+  border-left: 1px solid;
+  height: 133px;
+  position: fixed;
+  left: 181px; }
+  .join.join-top {
+    top: 131px; }
+  .join.join-bottom {
+    top: 274px; }
+
+.subsection {
+  margin-top: 42px; }
+
+.subsection-underline:after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: 2px;
+  width: 98%;
+  border-bottom: 1px solid grey; }
+
+.subsection-underline {
+  position: relative; }
+
+.container {
+  margin-top: 63px; }
+
+.content {
+  font-size: 21px;
+  line-height: 32px; }
+
+.circle {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  border: 1px solid;
+  position: absolute;
+  top: 39%;
+  left: 61%; }
+
+.button {
+  margin-top: 63px;
+  height: 51px;
+  font-size: 18px;
+  line-height: 51px;
+  color: #fff;
+  border-radius: 3px; }
+
+.button-explore {
+  width: 220px;
+  background-color: #dd3333; }
+
+.button-play {
+  width: 200px;
+  border: 1px solid; }
+
+body {
+  font-family: Source Sans Pro;
+  background-color: #2b2b2b;
+  color: #fff; }
+
+.heading {
+  font-family: Istok Web;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 85px; }
+
+.subheading {
+  font-family: Istok Web;
+  font-size: 45px;
+  line-height: 63px; }
+
+/*# sourceMappingURL=style.css.map */

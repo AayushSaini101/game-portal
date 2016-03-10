@@ -1,0 +1,258 @@
+@import 'reset';
+@import url(https://fonts.googleapis.com/css?family=Istok+Web:400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+$heading: Istok Web;
+$body: Source Sans Pro;
+
+html, button, select,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: $heading;
+}
+
+
+.bold {
+	font-weight: 700;	
+}
+
+.fixed {
+	position: fixed;
+}
+
+.left {
+	float: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.sideline {
+	display: inline-block;
+}
+
+.line {
+	height: 96px;
+	width: 7px;
+	background-color: #dd3333;
+	display: inline-block;	
+}
+
+.underline {
+	position: relative;	
+}
+
+.underline:after{
+	content: '';
+	position: absolute;
+	bottom: -45%;
+	left: 2px;
+	width: 6%;
+	border-bottom: 8px solid #dd3333;
+}
+
+nav {
+	height: 100vh;
+	width: 230px;
+	padding-top: 105px;
+	font-size: 21px;
+	font-height: 32px;
+	z-index:1;
+
+	ul {
+		margin-left: 90px;
+		li {
+			margin-bottom: 105px;
+			line-height: 38px;
+			position: relative;
+
+		}
+	}
+	.active {
+		font-weight: 700;
+		pointer-events:none;
+		.circle {
+			height: 15px;
+			width: 15px;
+			left: 59%;
+			.inner {
+				width: 9px;
+			    height: 9px;
+			    background-color: #fff;
+			    border-radius: 50%;
+			    position: relative;
+			    top: 24%;
+			    left: 25%;
+			}
+		}
+	}
+}
+
+header {
+	height: 105px;
+}
+
+.footer {
+	background-color:#212121;
+	height:42px;
+	line-height: 42px;
+	position: absolute;
+    width: calc(100% + 230px);
+    left: -230px;
+    bottom: 0px;
+}
+
+
+hr {
+	background-color: #636060;
+    border: 0 none;
+    height: 1px;
+    margin-right: 90px;
+    margin-top: 42px;
+}
+
+section {
+	min-height: 100vh;
+	padding-left: 230px;
+	padding-top: 105px;
+
+	&#home {
+		background-image: url('background.png');
+		background-size: cover;
+	}
+
+	&#ideas {
+		background-color:#262626;
+		position: relative;
+	}
+}
+
+form {
+	margin-bottom: 198px;
+	textarea {
+		height: 189px;
+		width: 780px;
+		background-color: inherit;
+		border: 1px solid #a5a5a5;
+		border-radius: 5px;
+		font-family: $body;
+		padding: 21px;
+	}
+	input {
+		background-color: inherit;
+		border: 1px solid #a5a5a5;
+		height: 47px;
+		padding:0px;
+		padding-left:20px;
+		&:nth-child(1){
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			width: 290px;
+		}
+		&:nth-child(2){
+			width: 330px;
+		}
+	}
+	.submit-button {
+		display:inline-block;
+		background-color:#dd3333;
+		margin-top:0px;
+		height: 49px;
+		width: 164px;
+	}
+}
+
+
+
+.game-card {
+	height: 378px;
+
+}
+
+.join {
+	border-left: 1px solid;
+    height: 133px;
+    position: fixed;
+    left: 181px;
+    &.join-top {
+    	top: 131px;
+    }
+    &.join-bottom {
+    	top: 274px;
+    }
+}
+
+.subsection {
+	margin-top: 42px;
+}
+
+.subsection-underline:after {
+	content: '';
+    position: absolute;
+    bottom: -20%;
+    left: 2px;
+    width: 98%;
+    border-bottom: 1px solid grey;
+}
+
+.subsection-underline {
+	position: relative;
+}
+
+.container {
+	margin-top: 63px;
+}
+
+.content {
+	font-size: 21px;
+	line-height: 32px;
+}
+
+.circle {
+	border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    border: 1px solid;
+    position: absolute;
+    top: 39%;
+    left: 61%;
+}
+
+.button {
+	margin-top: 63px;
+	height: 51px;
+	font-size: 18px;
+	line-height: 51px;
+	color: #fff;
+	border-radius: 3px;
+}
+
+.button-explore {
+	width: 220px;
+	background-color: #dd3333;
+}
+
+.button-play {
+	width: 200px;
+	border: 1px solid;
+}
+
+body {
+	font-family: $body;
+	background-color: #2b2b2b;
+	color: #fff;
+}
+
+.heading {
+	font-family: $heading;
+	font-weight: 700;
+	font-size: 72px;
+	line-height: 85px;
+}
+
+.subheading {
+	font-family: $heading;
+	font-size: 45px;
+	line-height: 63px;
+}
