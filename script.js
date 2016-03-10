@@ -59,7 +59,6 @@ $(document).ready(function(){
 	$(".button-explore").click(function(){
 		$(window).scrollTo($("#games"),1000);
 	});
-	console.log($('section').height());
 	//$('.poplight').offset().top
 
 });
