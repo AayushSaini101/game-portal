@@ -244,4 +244,14 @@ body {
   font-size: 45px;
   line-height: 63px; }
 
-/*# sourceMappingURL=style.css.map */
+.game-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.game-desc {
+  box-sizing: border-box;
+  padding-left: 2em; }
+
+.subsection input, .subsection a {
+  margin-right: 1em; }

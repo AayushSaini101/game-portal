@@ -12,7 +12,7 @@ html, button, select,
 
 
 .bold {
-	font-weight: 700;	
+	font-weight: 700;
 }
 
 .fixed {
@@ -35,11 +35,11 @@ html, button, select,
 	height: 96px;
 	width: 7px;
 	background-color: #dd3333;
-	display: inline-block;	
+	display: inline-block;
 }
 
 .underline {
-	position: relative;	
+	position: relative;
 }
 
 .underline:after{
@@ -255,4 +255,21 @@ body {
 	font-family: $heading;
 	font-size: 45px;
 	line-height: 63px;
+}
+
+.game-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.game-desc {
+	box-sizing: border-box;
+	padding-left: 2em;
+}
+
+.subsection {
+	input, a {
+		margin-right: 1em;
+	}
 }
