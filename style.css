@@ -125,7 +125,7 @@ hr {
   background-color: #636060;
   border: 0 none;
   height: 1px;
-  margin-right: 90px;
+  margin-right: 70px;
   margin-top: 42px; }
 
 section {
@@ -133,7 +133,7 @@ section {
   padding-left: 230px;
   padding-top: 105px; }
   section#home {
-    background-image: url("background.png");
+    background-image: url("img/background.png");
     background-size: cover; }
   section#ideas {
     background-color: #262626;
@@ -244,10 +244,9 @@ body {
   font-size: 45px;
   line-height: 63px; }
 
-.game-image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+.game-image img {
+  display: block;
+  margin: auto; }
 
 .game-desc {
   box-sizing: border-box;
@@ -255,3 +254,5 @@ body {
 
 .subsection input, .subsection a {
   margin-right: 1em; }
+
+/*# sourceMappingURL=style.css.map */
