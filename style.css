@@ -162,7 +162,8 @@ section {
     background-size: cover;
     padding-top: 25vh; }
   section#ideas {
-    position: relative; }
+    position: relative;
+    background-color: #262626; }
 
 form {
   margin-bottom: 198px; }

@@ -13,26 +13,14 @@ $(document).ready(function(){
 		if(scroll < scroll_games){
 			$('li').removeClass("active");
 			$(".first").addClass("active");
-			document.body.style.backgroundColor = "#2b2b2b";
-			$("#header-home").show();
-			$("#header-ideas").hide();
-			$("#header-games").hide();
 		}
 		else if(scroll >= scroll_ideas){
 			$('li').removeClass("active");
 			$(".third").addClass("active");
-			document.body.style.backgroundColor = "#262626";
-			$("#header-ideas").show();
-			$("#header-games").hide();
-			$("#header-home").hide();
 		}
 		else {
 			$('li').removeClass("active");
 			$(".second").addClass("active");
-			document.body.style.backgroundColor = "#2b2b2b";
-			$("#header-games").show();
-			$("#header-ideas").hide();
-			$("#header-home").hide();
 		}
 	});
 
