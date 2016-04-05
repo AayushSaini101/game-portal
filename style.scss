@@ -10,6 +10,9 @@ html, button, select,
     font-family: $heading;
 }
 
+* {
+	box-sizing: border-box;
+}
 
 .bold {
 	font-weight: 700;
@@ -54,7 +57,7 @@ html, button, select,
 nav {
 	height: 100vh;
 	width: 230px;
-	padding-top: 105px;
+	padding-top: 25vh;
 	font-size: 21px;
 	font-height: 32px;
 	z-index:1;
@@ -62,15 +65,25 @@ nav {
 	ul {
 		margin-left: 90px;
 		li {
+			font-weight: 700;
 			margin-bottom: 105px;
 			line-height: 38px;
 			position: relative;
-
 		}
 	}
+	a {
+		color: rgba(255,255,255,0.6);
+		font-size: 18px;
+	}
+	a:hover {
+		color: #fff;
+	}
 	.active {
-		font-weight: 700;
 		pointer-events:none;
+		a {
+			color: #fff;
+			font-size: 21px;
+		}
 		.circle {
 			height: 15px;
 			width: 15px;
@@ -88,8 +101,23 @@ nav {
 	}
 }
 
+.logo {
+	float: left;
+	margin-left: 90px;
+	margin-top: 63px;
+	img {
+		height: 38px;
+		width: 38px;
+	}
+}
+
 header {
-	height: 105px;
+	transition: visibility 2s;
+	-webkit-transition: visibility 2s;
+}
+
+.header-button-div {
+	margin-right: 50px;
 }
 
 .footer {
@@ -97,8 +125,8 @@ header {
 	height:42px;
 	line-height: 42px;
 	position: absolute;
-    width: calc(100% + 230px);
-    left: -230px;
+    width: 100vw;
+    left: 0px;
     bottom: 0px;
 }
 
@@ -107,22 +135,23 @@ hr {
 	background-color: #636060;
     border: 0 none;
     height: 1px;
-    margin-right: 70px;
     margin-top: 42px;
 }
 
 section {
 	min-height: 100vh;
-	padding-left: 230px;
-	padding-top: 105px;
-
+	padding-left: 330px;
+	padding-top: 150px;
+	padding-right: 90px;
+	transition: background 2s linear;
+	-webkit-transition: background 2s linear;
 	&#home {
 		background-image: url('img/background.png');
 		background-size: cover;
+		padding-top: 25vh;
 	}
 
 	&#ideas {
-		background-color:#262626;
 		position: relative;
 	}
 }
@@ -155,7 +184,6 @@ form {
 	}
 	.submit-button {
 		display:inline-block;
-		background-color:#dd3333;
 		margin-top:0px;
 		height: 49px;
 		width: 164px;
@@ -175,10 +203,10 @@ form {
     position: fixed;
     left: 181px;
     &.join-top {
-    	top: 131px;
+    	top: calc(25vh + 26px);
     }
     &.join-bottom {
-    	top: 274px;
+    	top: calc(25vh + 169px);
     }
 }
 
@@ -230,12 +258,50 @@ form {
 
 .button-explore {
 	width: 220px;
-	background-color: #dd3333;
+}
+
+.button-red {
+	background-color: rgba(221,51,51,0.9);
+}
+
+.button-red:hover {
+	background-color: rgba(221,51,51,1);
+}
+
+.button-red:active {
+	background-color: #C71A1A;
 }
 
 .button-play {
 	width: 200px;
 	border: 1px solid;
+}
+
+.button-login, .button-chat {
+	margin-right: 40px;
+	float: right;
+	width: 100px;
+	height: 32px;
+	font-size: 21px;
+	line-height: 32px;
+	font-weight: 700;
+	color: rgba(255,255,255,0.6);
+}
+
+.button-login:hover, .button-chat:hover {
+	color: rgb(255,255,255);
+}
+
+.button-transparent:hover {
+	background-color: rgba(255,255,255,0.1);
+}
+
+.button-transparent:active {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.button-login {
+	border: 1px solid #fff;
 }
 
 body {
@@ -260,7 +326,7 @@ body {
 .game-image {
 	img {
 		display:block;
-		margin:auto;
+		height: 55vh;
 	}
 }
 
@@ -270,7 +336,17 @@ body {
 }
 
 .subsection {
-	input, a {
+	a {
 		margin-right: 1em;
 	}
+}
+
+.margin-right--zero {
+	margin-right: 0px;
+	margin-left: auto;
+}
+
+.margin-left--zero {
+	margin-left: 0px;
+	margin-right: auto;
 }

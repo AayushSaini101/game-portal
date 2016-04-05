@@ -3,23 +3,39 @@
 <head>
 	<title>SDSLabs' Gaming Portal</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel='shortcut icon' href='img/favicon.png' type='image/x-icon'/ >
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script type="text/javascript" src="./node_modules/jquery.scrollto/jquery.scrollTo.min.js"></script>
 </head>
 <body>
-	<header class = "fixed pure-u-1">
-
-	</header>
-	<nav class = "fixed left">
-		<ul>
-			<li class="active first"><a href="#" onClick="return false;"><span class = "home">Home</span><div class="circle"><div class="inner"></div></div></a></li>
-			<div class = "fixed join join-top"></div>
-			<li class="second"><a href="#" onClick="return false;"><span class = "games">Games</span><div class="circle"><div class="inner"></div></div></div></a></li>
-			<div class = "fixed join join-bottom"></div>
-			<li class="third"><a href="#" onClick="return false;"><span class = "ideas">Ideas</span><div class="circle"><div class="inner"></div></div></div></a></li>
-		</ul>
-	</nav>
+  <nav class = "fixed left">
+    <ul>
+      <li class="active first"><a href="#" onClick="return false;"><span class = "home">Home</span><div class="circle"><div class="inner"></div></div></a></li>
+      <div class = "fixed join join-top"></div>
+      <li class="second"><a href="#" onClick="return false;"><span class = "games">Games</span><div class="circle"><div class="inner"></div></div></div></a></li>
+      <div class = "fixed join join-bottom"></div>
+      <li class="third"><a href="#" onClick="return false;"><span class = "ideas">Ideas</span><div class="circle"><div class="inner"></div></div></div></a></li>
+    </ul>
+  </nav>
+  <header id="header-home">
+    <div class="logo">
+      <img src="img/logo-main.png">
+    </div>
+    <div class="header-button-div">
+      <a href="#">
+        <div class="button button-login button-transparent center bold">
+          Login
+        </div>
+      </a>
+      <a href="https://chat.sdslabs.co/">
+        <div class="button button-chat center bold">
+          Chat
+        </div>
+      </a>
+    </div>
+  </header>
 	<section id = "home" class = "">
 		<div class="heading">
 			<div class = "line">
@@ -32,11 +48,28 @@
 			<p>WHERE IDEAS <br />COME TO LIFE</p>
 		</div>
 		<a href="#" onClick="return false;">
-		<div class = "button button-explore center bold">
+		<div class = "button button-explore button-red center bold">
 			EXPLORE
 		</div>
 		</a>
 	</section>
+  <header id="header-games">
+    <div class="logo">
+      <img src="img/logo-main.png">
+    </div>
+    <div class="header-button-div">
+      <a href="#">
+        <div class="button button-login button-transparent center bold">
+          Login
+        </div>
+      </a>
+      <a href="https://chat.sdslabs.co/">
+        <div class="button button-chat center bold">
+          Chat
+        </div>
+      </a>
+    </div>
+  </header>
 	<section id = "games">
 		<div class="pure-u-1 heading underline">
 			<p>GAMES</p>
@@ -44,23 +77,25 @@
 		<div class="pure-g subsection">
 			<div class="pure-u-1-2 game-image">
 				<div class = "subsection">
-					<img src = "img/chess.png">
+					<img class="margin-left--zero" src = "img/chess.png">
 				</div>
 			</div>
 			<div class="pure-u-1-2 game-desc">
-				<div class="pure-u-1 bold underline subsection subheading">
-					Chess Wars
-				</div>
-				<div class = "pure-u-1 container content">
-					<p>
-					   A star wars based makeover for everyday chess. Play against friends or against the bot.
-					</p>
-					<a href = "//chess.sdslabs.co.in/">
-					<div class = "button center bold button-play">
-                        PLAY
-					</div>
-					</a>
-				</div>
+  			<div class="">
+          <div class="pure-u-1 bold underline subsection subheading">
+  					Chess Wars
+  				</div>
+  				<div class = "pure-u-1 container content">
+  					<p>
+  					   A star wars based makeover for everyday chess. Play against friends or against the bot.
+  					</p>
+  					<a href = "//chess.sdslabs.co.in/">
+  					<div class = "button center bold button-play button-transparent">
+                          PLAY
+  					</div>
+  					</a>
+  				</div>
+        </div>
 			</div>
 		</div>
 		<hr>
@@ -74,7 +109,7 @@
                        Race against your friends to trap them in a cage in this tron-esque game.
                     </p>
                     <a href = "//curvy.sdslabs.co/">
-                    <div class = "button center bold button-play">
+                    <div class = "button center bold button-play button-transparent">
                         PLAY
                     </div>
                     </a>
@@ -82,7 +117,7 @@
             </div>
             <div class="pure-u-1-2 game-image">
             	<div class = "subsection">
-            		<img src="img/curvy.png">
+            		<img class="margin-right--zero" src="img/curvy.png">
             	</div>
             </div>
         </div>
@@ -90,7 +125,7 @@
         <div class="pure-g subsection">
             <div class="pure-u-1-2 game-image">
             	<div class = "subsection">
-            		<img src = "img/reflexio.png">
+            		<img class="margin-left--zero" src = "img/reflexio.png">
             	</div>
             </div>
             <div class="pure-u-1-2 game-desc">
@@ -102,15 +137,31 @@
                         Manipulate mirrors and use lasers to destroy the computer's attack drones. Be careful, or you might end up destroying your own mothership.
                     </p>
                     <a href = "//reflexio.sdslabs.co/">
-                    <div class = "button center bold button-play">
+                    <div class = "button center bold button-play button-transparent">
                         PLAY
                     </div>
                     </a>
                 </div>
             </div>
         </div>
-        <hr>
 	</section>
+  <header id="header-ideas">
+    <div class="logo">
+      <img src="img/logo-main.png">
+    </div>
+    <div class="header-button-div">
+      <a href="#">
+        <div class="button button-login button-transparent center bold">
+          Login
+        </div>
+      </a>
+      <a href="https://chat.sdslabs.co/">
+        <div class="button button-chat center bold">
+          Chat
+        </div>
+      </a>
+    </div>
+  </header>
 	<section id = "ideas">
 		<div class="pure-u-1 heading underline">
 			<p>IDEAS</p>
@@ -122,13 +173,12 @@
 				<div class = "subsection">
 					<input type="text" placeholder="Full Name"><!--
 					--><input type="text" placeholder="Email Address"><!--
-					--><a href = ""><div class="bold center button submit-button">SUBMIT</div></a>
+					--><a href = ""><div class="bold center button submit-button button-red">SUBMIT</div></a>
 				</div>
-			</form>
+        <div class="subsection"><p style="font-size: 16px; font-style: italic;">* If you have any cool game, contact us and we will host it for you.</p></div>
+      </form>
 		</div>
-		<div class = "center footer">
-			Made with &lt;3 by SDSLabs
-		</div>
+		<div class = "center footer">Made with <i class="fa fa-heart" style="color: #dd3333"></i> by SDSLabs</div>
 	</section>
 	<script src="script.js"></script>
 </body>

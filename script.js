@@ -4,23 +4,35 @@ $(document).ready(function(){
 		$(window).scrollTo($(clicked_class),1000);
 	});
 
-	var scroll_games = $('#games').offset().top;
-	var scroll_ideas = $('#ideas').offset().top;
+	scroll_games = $('#games').offset().top;
+	scroll_ideas = $('#ideas').offset().top;
 
 	$(window).scroll(function(){
 		var scroll = $(window).scrollTop()
-		
+
 		if(scroll < scroll_games){
 			$('li').removeClass("active");
 			$(".first").addClass("active");
+			document.body.style.backgroundColor = "#2b2b2b";
+			$("#header-home").show();
+			$("#header-ideas").hide();
+			$("#header-games").hide();
 		}
 		else if(scroll >= scroll_ideas){
 			$('li').removeClass("active");
 			$(".third").addClass("active");
+			document.body.style.backgroundColor = "#262626";
+			$("#header-ideas").show();
+			$("#header-games").hide();
+			$("#header-home").hide();
 		}
 		else {
 			$('li').removeClass("active");
 			$(".second").addClass("active");
+			document.body.style.backgroundColor = "#2b2b2b";
+			$("#header-games").show();
+			$("#header-ideas").hide();
+			$("#header-home").hide();
 		}
 	});
 
@@ -60,5 +72,14 @@ $(document).ready(function(){
 		$(window).scrollTo($("#games"),1000);
 	});
 	//$('.poplight').offset().top
+	(function($) {
+		$.get("//accounts.sdslabs.co.in/info", function(data) {
+			if(data.loggein) {
+				$('.button-login').html(data.name) && $('.button-login').parent().removeAttr("href");
+			} else {
+				$('.button-login').parent().attr('href', "//accounts.sdslabs.co.in/login?redirect="+window.location.href);
+			}
+		}, "json");
+	})(jQuery);
 
 });

@@ -48,6 +48,9 @@ html, button, select,
   /* Set your content font stack here: */
   font-family: Istok Web; }
 
+* {
+  box-sizing: border-box; }
+
 .bold {
   font-weight: 700; }
 
@@ -83,19 +86,27 @@ html, button, select,
 nav {
   height: 100vh;
   width: 230px;
-  padding-top: 105px;
+  padding-top: 25vh;
   font-size: 21px;
   font-height: 32px;
   z-index: 1; }
   nav ul {
     margin-left: 90px; }
     nav ul li {
+      font-weight: 700;
       margin-bottom: 105px;
       line-height: 38px;
       position: relative; }
+  nav a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px; }
+  nav a:hover {
+    color: #fff; }
   nav .active {
-    font-weight: 700;
     pointer-events: none; }
+    nav .active a {
+      color: #fff;
+      font-size: 21px; }
     nav .active .circle {
       height: 15px;
       width: 15px;
@@ -109,34 +120,48 @@ nav {
         top: 24%;
         left: 25%; }
 
+.logo {
+  float: left;
+  margin-left: 90px;
+  margin-top: 63px; }
+  .logo img {
+    height: 38px;
+    width: 38px; }
+
 header {
-  height: 105px; }
+  transition: visibility 2s;
+  -webkit-transition: visibility 2s; }
+
+.header-button-div {
+  margin-right: 50px; }
 
 .footer {
   background-color: #212121;
   height: 42px;
   line-height: 42px;
   position: absolute;
-  width: calc(100% + 230px);
-  left: -230px;
+  width: 100vw;
+  left: 0px;
   bottom: 0px; }
 
 hr {
   background-color: #636060;
   border: 0 none;
   height: 1px;
-  margin-right: 70px;
   margin-top: 42px; }
 
 section {
   min-height: 100vh;
-  padding-left: 230px;
-  padding-top: 105px; }
+  padding-left: 330px;
+  padding-top: 150px;
+  padding-right: 90px;
+  transition: background 2s linear;
+  -webkit-transition: background 2s linear; }
   section#home {
     background-image: url("img/background.png");
-    background-size: cover; }
+    background-size: cover;
+    padding-top: 25vh; }
   section#ideas {
-    background-color: #262626;
     position: relative; }
 
 form {
@@ -163,7 +188,6 @@ form {
       width: 330px; }
   form .submit-button {
     display: inline-block;
-    background-color: #dd3333;
     margin-top: 0px;
     height: 49px;
     width: 164px; }
@@ -177,9 +201,9 @@ form {
   position: fixed;
   left: 181px; }
   .join.join-top {
-    top: 131px; }
+    top: calc(25vh + 26px); }
   .join.join-bottom {
-    top: 274px; }
+    top: calc(25vh + 169px); }
 
 .subsection {
   margin-top: 42px; }
@@ -221,12 +245,42 @@ form {
   border-radius: 3px; }
 
 .button-explore {
-  width: 220px;
+  width: 220px; }
+
+.button-red {
+  background-color: rgba(221, 51, 51, 0.9); }
+
+.button-red:hover {
   background-color: #dd3333; }
+
+.button-red:active {
+  background-color: #C71A1A; }
 
 .button-play {
   width: 200px;
   border: 1px solid; }
+
+.button-login, .button-chat {
+  margin-right: 40px;
+  float: right;
+  width: 100px;
+  height: 32px;
+  font-size: 21px;
+  line-height: 32px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6); }
+
+.button-login:hover, .button-chat:hover {
+  color: white; }
+
+.button-transparent:hover {
+  background-color: rgba(255, 255, 255, 0.1); }
+
+.button-transparent:active {
+  background-color: rgba(255, 255, 255, 0.5); }
+
+.button-login {
+  border: 1px solid #fff; }
 
 body {
   font-family: Source Sans Pro;
@@ -246,13 +300,21 @@ body {
 
 .game-image img {
   display: block;
-  margin: auto; }
+  height: 55vh; }
 
 .game-desc {
   box-sizing: border-box;
   padding-left: 2em; }
 
-.subsection input, .subsection a {
+.subsection a {
   margin-right: 1em; }
+
+.margin-right--zero {
+  margin-right: 0px;
+  margin-left: auto; }
+
+.margin-left--zero {
+  margin-left: 0px;
+  margin-right: auto; }
 
 /*# sourceMappingURL=style.css.map */
