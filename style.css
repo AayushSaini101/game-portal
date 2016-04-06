@@ -179,13 +179,11 @@ section {
     height: 189px;
     width: 780px;
     background-color: inherit;
-    border: 1px solid #a5a5a5;
     border-radius: 5px;
     font-family: Source Sans Pro;
     padding: 21px; }
   .ideas-form input {
     background-color: inherit;
-    border: 1px solid #a5a5a5;
     height: 47px;
     padding: 0px;
     padding-left: 20px; }
@@ -245,6 +243,9 @@ section {
   margin-top: 0px;
   height: 49px;
   width: 164px; }
+
+.input-white-border {
+  border: 1px solid #a5a5a5; }
 
 .input-white-border:focus {
   outline-color: white; }
