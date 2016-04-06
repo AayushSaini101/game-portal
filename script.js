@@ -13,7 +13,7 @@ $(document).ready(function(){
 			$('li').removeClass("active");
 			$(".first").addClass("active");
 		}
-		else if(scroll >= scroll_ideas){
+		else if(scroll >= parseInt(scroll_ideas)){
 			$('li').removeClass("active");
 			$(".third").addClass("active");
 		}
@@ -62,11 +62,54 @@ $(document).ready(function(){
 	(function($) {
 		$.get("//accounts.sdslabs.co.in/info", function(data) {
 			if(data.loggein) {
-				$('.button-login').html(data.name) && $('.button-login').parent().removeAttr("href");
+				$('.button-login').html(data.name)
+				$('.button-login').parent().removeAttr("href");
+				$('.button-login').removeClass("button-transparent");
+				$('[name="fullname"]').val(data.name);
+				$('[name="email"]').val(data.email);
 			} else {
 				$('.button-login').parent().attr('href', "//accounts.sdslabs.co.in/login?redirect="+window.location.href);
 			}
 		}, "json");
+	})(jQuery);
+
+	(function($) {
+		$(".submit-button").on("click", function(e) {
+			e.preventDefault();
+			var self = this;
+			var form = $(self).closest('form');
+			var formData = $(form).serializeArray();
+			var flag = true;
+			var regex = {
+				email: /\S+@\S+\.\S+/,
+				body: /\S+/,
+				app: /Other/,
+				public: /false/,
+				fullname: /\S+/
+			}
+			formData.map(function(ele) {
+				if(!regex[ele.name].test(ele.value)) {
+					flag = false;
+					$('[name="'+ele.name+'"]').addClass('input-red-border');
+				} else {
+					$('[name="'+ele.name+'"]').removeClass('input-red-border');
+				}
+			});
+			if(flag) {
+				$(self).html('<i class="fa fa-circle-o-notch fa-spin"></i>');
+				$.ajax("https://feedback.sdslabs.co.in/issue", $(form).serialize())
+				.done(function(data) {
+					$(self).removeClass('button-red');
+					$(self).addClass('button-green');
+					$(self).html("SUCCESS");
+				})
+				.fail(function(data) {
+					$(self).removeClass('button-red');
+					$(self).addClass('button-danger-red');
+					$(self).html("FAILED");
+				});
+			}
+		});
 	})(jQuery);
 
 });

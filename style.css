@@ -196,6 +196,12 @@ form {
     height: 49px;
     width: 164px; }
 
+.input-white-border:focus {
+  border-color: #fff; }
+
+.input-red-border {
+  border-color: red; }
+
 .game-card {
   height: 378px; }
 
@@ -259,6 +265,12 @@ form {
 
 .button-red:active {
   background-color: #C71A1A; }
+
+.button-green {
+  background-color: #00EC00; }
+
+.button-danger-red {
+  background-color: #ff0000; }
 
 .button-play {
   width: 200px;

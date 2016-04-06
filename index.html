@@ -133,11 +133,13 @@
 		<div class="pure-u-1 subsection content">
 			<div class="subsection"><p class = "bold">Have any ideas for a game? Share with us.</p></div>
 			<form class="subsection content">
-				<textarea placeholder = "Describe your idea for the game here..."></textarea>
+				<textarea name="body" placeholder = "Describe your idea for the game here..." class="input-white-border"></textarea>
+        <input type="hidden" name="app" value="Other">
+        <input type="hidden" name="public" value="false">
 				<div class = "subsection">
-					<input type="text" placeholder="Full Name"><!--
-					--><input type="text" placeholder="Email Address"><!--
-					--><a href = ""><div class="bold center button submit-button button-red">SUBMIT</div></a>
+					<input type="text" name="fullname" placeholder="Full Name" class="input-white-border"><!--
+					--><input type="text" name="email" placeholder="Email Address" class="input-white-border"><!--
+					--><a href=""><div class="bold center button submit-button button-red">SUBMIT</div></a>
 				</div>
         <div class="subsection"><p style="font-size: 16px; font-style: italic;">* If you have any cool game, contact us and we will host it for you.</p></div>
       </form>
