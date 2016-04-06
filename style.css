@@ -219,7 +219,8 @@ section {
     font-size: 18px;
     padding: 4px 2px; }
     .login-form .form-control:focus {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.6); }
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      outline: none; }
   .login-form a {
     margin: 10px auto;
     display: inherit;
