@@ -173,29 +173,27 @@ section {
     position: relative;
     background-color: #262626; }
 
-.ideas-form {
-  margin-bottom: 198px; }
-  .ideas-form textarea {
-    height: 189px;
-    width: 780px;
-    background-color: inherit;
-    border-radius: 5px;
-    font-family: Source Sans Pro;
-    padding: 21px; }
-  .ideas-form input {
-    background-color: inherit;
-    height: 47px;
-    padding: 0px;
-    padding-left: 20px; }
-    .ideas-form input:nth-child(1) {
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      width: 290px; }
-    .ideas-form input:nth-child(2) {
-      width: 330px; }
-  .ideas-form .submit-button {
-    margin-left: -1px;
-    height: 49px; }
+.ideas-form textarea {
+  height: 189px;
+  width: 780px;
+  background-color: inherit;
+  border-radius: 5px;
+  font-family: Source Sans Pro;
+  padding: 21px; }
+.ideas-form input {
+  background-color: inherit;
+  height: 47px;
+  padding: 0px;
+  padding-left: 20px; }
+  .ideas-form input:nth-child(1) {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 290px; }
+  .ideas-form input:nth-child(2) {
+    width: 330px; }
+.ideas-form .submit-button {
+  margin-left: -1px;
+  height: 49px; }
 
 .login-form {
   background-color: #333;
@@ -385,5 +383,8 @@ body {
 .margin-left--zero {
   margin-left: 0px;
   margin-right: auto; }
+
+.margin-top--zero {
+  margin-top: 0px; }
 
 /*# sourceMappingURL=style.css.map */

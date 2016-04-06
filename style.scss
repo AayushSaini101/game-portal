@@ -166,7 +166,6 @@ section {
 }
 
 .ideas-form {
-	margin-bottom: 198px;
 	textarea {
 		height: 189px;
 		width: 780px;
@@ -231,7 +230,7 @@ section {
 			color: rgba(255,255,255,1);
 		}
 
-    	}
+  }
 	.info {
 		margin: 10px;
 		font-style: italic;
@@ -433,4 +432,8 @@ body {
 .margin-left--zero {
 	margin-left: 0px;
 	margin-right: auto;
+}
+
+.margin-top--zero {
+	margin-top: 0px;
 }
