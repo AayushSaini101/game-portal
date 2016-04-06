@@ -208,4 +208,11 @@ $(document).ready(function(){
 			$(this).parent().append(form);
 		});
 	})(jQuery);
+
+	(function($) {
+		$(".chat").on("click", function(e) {
+			location = "https://chat.sdslabs.co/"
+		});
+	})(jQuery);
+
 });
