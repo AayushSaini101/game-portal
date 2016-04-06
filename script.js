@@ -59,29 +59,32 @@ $(document).ready(function(){
 		$(window).scrollTo($("#games"),1000);
 	});
 	//$('.poplight').offset().top
-	(function($) {
-		$.ajax({
-			url: "https://accounts.sdslabs.co.in/info",
-			type: "GET",
-			dataType: "json",
-			xhrFields: {
-				withCredentials: !0
-			},
-			success: function(data) {
-				console.log(data);
-				if(data.loggedin) {
-					$('.button-login').html(data.name)
-					$('.button-login').parent().removeAttr("href");
-					$('.button-login').removeClass("button-transparent");
-					$('.button-login').removeClass("button-login");
-					$('[name="fullname"]').val(data.name);
-					$('[name="email"]').val(data.email);
-				} else {
-					$('.button-login').parent().attr('href', "https://accounts.sdslabs.co.in/login?redirect="+window.location.href);
+	function getUserName() {
+		(function($) {
+			$.ajax({
+				url: "https://accounts.sdslabs.co.in/info",
+				type: "GET",
+				dataType: "json",
+				xhrFields: {
+					withCredentials: !0
+				},
+				success: function(data) {
+					console.log(data);
+					if(data.loggedin) {
+						$('.button-login').html(data.name)
+						$('.button-login').parent().removeAttr("href");
+						$('.button-login').removeClass("button-transparent");
+						$('.button-login').removeClass("button-login");
+						$('[name="fullname"]').val(data.name);
+						$('[name="email"]').val(data.email);
+					} else {
+						$('.button-login').parent().attr('href', "https://accounts.sdslabs.co.in/login?redirect="+window.location.href);
+					}
 				}
-			}
-		});
-	})(jQuery);
+			});
+		})(jQuery);
+	}
+	getUserName();
 
 	(function($) {
 		$(document).on("click", ".submit-button", function(e) {
@@ -159,8 +162,10 @@ $(document).ready(function(){
 					form.find(".submit-button").removeClass("button-green");
 					form.find(".submit-button").addClass("button-red");
 				}
-				else
+				else {
 					form.remove();
+					getUserName();
+				}
 			});
 			form.on('failure', function(e, data) {
 				form.find(".info").html("Some problem occured. Try later");

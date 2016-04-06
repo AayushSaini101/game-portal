@@ -114,6 +114,8 @@ nav {
 }
 
 header {
+	z-index: 1;
+	position: relative;
 	transition: visibility 2s;
 	-webkit-transition: visibility 2s;
 }
