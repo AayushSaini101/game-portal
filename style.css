@@ -96,29 +96,32 @@ nav {
       font-weight: 700;
       margin-bottom: 105px;
       line-height: 38px;
-      position: relative; }
-  nav a {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px; }
-  nav a:hover {
-    color: #fff; }
-  nav .active {
-    pointer-events: none; }
-    nav .active a {
+      cursor: pointer;
+      position: relative;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 18px; }
+      nav ul li:after {
+        font-family: FontAwesome;
+        content: "\f10c";
+        font-weight: lighter;
+        font-size: 12px;
+        position: absolute;
+        left: 85px; }
+      nav ul li:not(:first-child):before {
+        cursor: default;
+        content: ' ';
+        position: absolute;
+        height: 133px;
+        border-right: 1px solid #fff;
+        left: 90px;
+        top: -120px; }
+    nav ul .active {
       color: #fff;
       font-size: 21px; }
-    nav .active .circle {
-      height: 15px;
-      width: 15px;
-      left: 59%; }
-      nav .active .circle .inner {
-        width: 9px;
-        height: 9px;
-        background-color: #fff;
-        border-radius: 50%;
-        position: relative;
-        top: 24%;
-        left: 25%; }
+      nav ul .active:after {
+        content: "\f192";
+        font-size: 18px;
+        left: 83px; }
 
 .logo {
   float: left;

@@ -68,36 +68,38 @@ nav {
 			font-weight: 700;
 			margin-bottom: 105px;
 			line-height: 38px;
+			cursor: pointer;
 			position: relative;
-		}
-	}
-	a {
-		color: rgba(255,255,255,0.6);
-		font-size: 18px;
-	}
-	a:hover {
-		color: #fff;
-	}
-	.active {
-		pointer-events:none;
-		a {
-			color: #fff;
-			font-size: 21px;
-		}
-		.circle {
-			height: 15px;
-			width: 15px;
-			left: 59%;
-			.inner {
-				width: 9px;
-			    height: 9px;
-			    background-color: #fff;
-			    border-radius: 50%;
-			    position: relative;
-			    top: 24%;
-			    left: 25%;
+			color: rgba(255,255,255,0.6);
+			font-size: 18px;
+			&:after {
+				font-family: FontAwesome;
+				content: "\f10c";
+				font-weight: lighter;
+				font-size: 12px;
+				position: absolute;
+				left: 85px;
+			}
+			&:not(:first-child):before {
+				cursor: default;
+				content: ' ';
+				position: absolute;
+				height: 133px;
+				border-right: 1px solid #fff;
+				left: 90px;
+				top: -120px;
 			}
 		}
+		.active {
+			color: #fff;
+			font-size: 21px;
+			&:after {
+				content: "\f192";
+				font-size: 18px;
+				left: 83px;
+			}
+		}
+
 	}
 }
 

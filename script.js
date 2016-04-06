@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	$('li').click(function(){
-		var clicked_class = '#'+$(this).find('span').attr("class");
-		$(window).scrollTo($(clicked_class),1000);
+		$(window).scrollTo($(this).attr("target"),1000);
 	});
 
 	scroll_games = $('#games').offset().top;
