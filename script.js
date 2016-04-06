@@ -3,11 +3,31 @@ $(document).ready(function(){
 		$(window).scrollTo($(this).attr("target"),1000);
 	});
 
-	scroll_games = $('#games').offset().top;
-	scroll_ideas = $('#ideas').offset().top;
+	var scroll_home = $('#home').offset().top;
+	var scroll_games = $('#games').offset().top;
+	var scroll_ideas = $('#ideas').offset().top;
 
 	$(window).scroll(function(){
 		var scroll = $(window).scrollTop()
+
+		if(Math.abs(scroll-scroll_home) < 100) {
+			$('.header-home').css('opacity', 1);
+		} else {
+			$('.header-home').css('opacity', 0);
+		}
+
+		if(Math.abs(scroll-scroll_games) < 100)  {
+			$('.header-games').css('opacity', 1);
+		} else {
+			$('.header-games').css('opacity', 0);
+		}
+
+		if(Math.abs(scroll-scroll_ideas) < 100)  {
+			$('.header-ideas').css('opacity', 1);
+		} else {
+			$('.header-ideas').css('opacity', 0);
+		}
+
 
 		if(scroll < scroll_games){
 			$('li').removeClass("active");

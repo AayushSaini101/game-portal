@@ -134,8 +134,8 @@ nav {
 header {
   z-index: 1;
   position: relative;
-  transition: visibility 2s;
-  -webkit-transition: visibility 2s; }
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s; }
 
 .header-button-div {
   margin-right: 50px; }
