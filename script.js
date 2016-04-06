@@ -164,11 +164,12 @@ $(document).ready(function(){
 	(function($) {
 		$(".button-login").on("click", function(e) {
 			var form = $('<form class="login-form center" action="https://accounts.sdslabs.co.in/login?redirect=http://game.sdslabs.co.in/"></form>');
-			form.append('<input type="text" name="username" class="form-control input-white-border" placeholder="USERNAME">');
-			form.append('<input type="password" name="password" class="form-control input-white-border" placeholder="PASSWORD">');
+			form.append('<input type="text" name="username" class="form-control input-white-border" placeholder="Username">');
+			form.append('<input type="password" name="password" class="form-control input-white-border" placeholder="Password">');
 			form.append('<input type="hidden" id="redirect" name="redirect" value="https://accounts.sdslabs.co.in">');
-			form.append('<a class="" href="https://accounts.sdslabs.co.in/register">New user? Sign up here</a>')
 			form.append('<div class="bold center button submit-button button-red">LOGIN</div>');
+			form.append('<a class="" href="https://accounts.sdslabs.co.in/recover/password">Forgot Password</a>')
+			form.append('<a class="" href="https://accounts.sdslabs.co.in/register">Sign Up</a>')
 			form.append('<div class="info"></div>');
 			form.on('success', function(e, data) {
 				if(~data.indexOf("No such user exists.")) {
