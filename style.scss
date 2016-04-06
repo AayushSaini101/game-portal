@@ -159,7 +159,7 @@ section {
 	}
 }
 
-form {
+.ideas-form {
 	margin-bottom: 198px;
 	textarea {
 		height: 189px;
@@ -185,12 +185,40 @@ form {
 			width: 330px;
 		}
 	}
-	.submit-button {
-		display:inline-block;
-		margin-top:0px;
-		height: 49px;
-		width: 164px;
+}
+
+.login-form {
+	background-color: #000;
+	border-radius: 3px;
+	border: 1px solid #fff;
+	position: absolute;
+	right: 90px;
+	top: 60px;
+	.form-control {
+		background-color: transparent;
+		border: 1px solid transparent;
+		border-bottom: 1px solid rgba(255,255,255,0.6);
+		display: inherit;
+		height: 50px;
+		width: 200px;
+		margin: 7px 15px;
+		font-size: 21px;
+		padding: 4px 2px;
+		&:focus {
+			border-bottom: 1px solid rgba(255,255,255,0.6);
+		}
 	}
+	.submit-button {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+.submit-button {
+	display:inline-block;
+	margin-top:0px;
+	height: 49px;
+	width: 164px;
 }
 
 .input-white-border:focus {
@@ -263,6 +291,7 @@ form {
 	line-height: 51px;
 	color: #fff;
 	border-radius: 3px;
+	cursor: pointer;
 }
 
 .button-explore {
@@ -319,6 +348,7 @@ form {
 
 .button-login {
 	border: 1px solid #fff;
+	position: relative;
 }
 
 body {

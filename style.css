@@ -168,9 +168,9 @@ section {
     position: relative;
     background-color: #262626; }
 
-form {
+.ideas-form {
   margin-bottom: 198px; }
-  form textarea {
+  .ideas-form textarea {
     height: 189px;
     width: 780px;
     background-color: inherit;
@@ -178,23 +178,47 @@ form {
     border-radius: 5px;
     font-family: Source Sans Pro;
     padding: 21px; }
-  form input {
+  .ideas-form input {
     background-color: inherit;
     border: 1px solid #a5a5a5;
     height: 47px;
     padding: 0px;
     padding-left: 20px; }
-    form input:nth-child(1) {
+    .ideas-form input:nth-child(1) {
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
       width: 290px; }
-    form input:nth-child(2) {
+    .ideas-form input:nth-child(2) {
       width: 330px; }
-  form .submit-button {
-    display: inline-block;
-    margin-top: 0px;
-    height: 49px;
-    width: 164px; }
+
+.login-form {
+  background-color: #000;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  position: absolute;
+  right: 90px;
+  top: 60px; }
+  .login-form .form-control {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    display: inherit;
+    height: 50px;
+    width: 200px;
+    margin: 7px 15px;
+    font-size: 21px;
+    padding: 4px 2px; }
+    .login-form .form-control:focus {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6); }
+  .login-form .submit-button {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+
+.submit-button {
+  display: inline-block;
+  margin-top: 0px;
+  height: 49px;
+  width: 164px; }
 
 .input-white-border:focus {
   border-color: #fff; }
@@ -252,7 +276,8 @@ form {
   font-size: 18px;
   line-height: 51px;
   color: #fff;
-  border-radius: 3px; }
+  border-radius: 3px;
+  cursor: pointer; }
 
 .button-explore {
   width: 220px; }
@@ -296,7 +321,8 @@ form {
   background-color: rgba(255, 255, 255, 0.5); }
 
 .button-login {
-  border: 1px solid #fff; }
+  border: 1px solid #fff;
+  position: relative; }
 
 body {
   font-family: Source Sans Pro;

@@ -60,7 +60,7 @@ $(document).ready(function(){
 	});
 	//$('.poplight').offset().top
 	(function($) {
-		$.get("//accounts.sdslabs.co.in/info", function(data) {
+		$.get("https://accounts.sdslabs.co.in/info", function(data) {
 			if(data.loggein) {
 				$('.button-login').html(data.name)
 				$('.button-login').parent().removeAttr("href");
@@ -68,13 +68,13 @@ $(document).ready(function(){
 				$('[name="fullname"]').val(data.name);
 				$('[name="email"]').val(data.email);
 			} else {
-				$('.button-login').parent().attr('href', "//accounts.sdslabs.co.in/login?redirect="+window.location.href);
+				$('.button-login').parent().attr('href', "https://accounts.sdslabs.co.in/login?redirect="+window.location.href);
 			}
 		}, "json");
 	})(jQuery);
 
 	(function($) {
-		$(".submit-button").on("click", function(e) {
+		$(document).on("click", ".submit-button", function(e) {
 			e.preventDefault();
 			var self = this;
 			var form = $(self).closest('form');
@@ -85,8 +85,11 @@ $(document).ready(function(){
 				body: /\S+/,
 				app: /Other/,
 				public: /false/,
-				fullname: /\S+/
+				fullname: /\S+/,
+				username: /\S+/,
+				password: /\S+/
 			}
+			console.log(formData);
 			formData.map(function(ele) {
 				if(!regex[ele.name].test(ele.value)) {
 					flag = false;
@@ -97,7 +100,7 @@ $(document).ready(function(){
 			});
 			if(flag) {
 				$(self).html('<i class="fa fa-circle-o-notch fa-spin"></i>');
-				$.ajax("https://feedback.sdslabs.co.in/issue", $(form).serialize())
+				$.post($(form).attr("action"), $(form).serialize())
 				.done(function(data) {
 					$(self).removeClass('button-red');
 					$(self).addClass('button-green');
@@ -109,6 +112,16 @@ $(document).ready(function(){
 					$(self).html("FAILED");
 				});
 			}
+		});
+	})(jQuery);
+
+	(function($) {
+		$(".button-login").on("click", function() {
+			var form = $('<form class="login-form center" action="https://accounts.sdslabs.co.in/login"></form>');
+			form.append('<input type="text" name="username" class="form-control input-white-border" placeholder="USERNAME">');
+			form.append('<input type="password" name="password" class="form-control input-white-border" placeholder="PASSWORD">');
+			form.append('<div class="bold center button submit-button button-red">LOGIN</div>');
+			$(this).parent().append(form);
 		});
 	})(jQuery);
 
