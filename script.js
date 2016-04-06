@@ -167,7 +167,7 @@ $(document).ready(function(){
 			});
 			$(document).on('mousedown', function(e) {
 				var form = $(".login-form");
-				if(!form.is(e.target))
+				if(!form.is(e.target) && form.has(e.target).length === 0)
 					form.remove();
 			});
 			$(this).parent().append(form);
