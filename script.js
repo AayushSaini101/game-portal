@@ -156,16 +156,25 @@ $(document).ready(function(){
 	(function($) {
 		var form = $('.ideas-form');
 		var submitButton = $(form).find('.submit-button');
+		function formReset() {
+			form.find("input[type=text], textarea").val("");
+			form.find(".submit-button")
+				.removeClass("button-gray")
+				.addClass("button-red")
+				.val("SUBMIT");
+		}
 		form.on('success', function(e, data) {
 			submitButton.removeClass('button-red');
 			submitButton.addClass('button-gray');
 			submitButton.html("SUCCESS");
+			setTimeout(formReset, 2000);
 		});
 		form.on('failure', function(e, data) {
 			console.log(data);
 			submitButton.removeClass('button-red');
 			submitButton.addClass('button-danger-red');
 			submitButton.html("FAILED");
+			setTimeout(formReset, 2000);
 		});
 	})(jQuery);
 
