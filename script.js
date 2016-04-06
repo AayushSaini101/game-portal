@@ -158,7 +158,7 @@ $(document).ready(function(){
 		var submitButton = $(form).find('.submit-button');
 		form.on('success', function(e, data) {
 			submitButton.removeClass('button-red');
-			submitButton.addClass('button-green');
+			submitButton.addClass('button-gray');
 			submitButton.html("SUCCESS");
 		});
 		form.on('failure', function(e, data) {
@@ -184,13 +184,9 @@ $(document).ready(function(){
 				if(~data.indexOf("No such user exists.")) {
 					form.find(".info").html("No such user exists.");
 					form.find(".submit-button").html("Login");
-					form.find(".submit-button").removeClass("button-green");
-					form.find(".submit-button").addClass("button-red");
 				}
 				else if (~data.indexOf("Incorrect password for this user")) {
 					form.find(".info").html("Incorrect Password");
-					form.find(".submit-button").removeClass("button-green");
-					form.find(".submit-button").addClass("button-red");
 				}
 				else {
 					form.remove();

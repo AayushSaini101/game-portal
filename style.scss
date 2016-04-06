@@ -55,7 +55,7 @@ html, button, select,
 }
 
 #games {
-	margin-bottom: 60px;	
+	margin-bottom: 60px;
 }
 
 nav {
@@ -204,8 +204,6 @@ section {
 	position: absolute;
 	right: 90px;
 	top: 60px;
-	width: 220px;
-    height: 241px;
 	.form-control {
 		background-color: transparent;
 		border: 1px solid transparent;
@@ -226,13 +224,13 @@ section {
 		display: inherit;
 		color: rgba(255,255,255,0.6);
 		&:link {
-			color: rgba(255,255,255,0.6);	
+			color: rgba(255,255,255,0.6);
 		}
 		&:visited {
-			color: rgba(255,255,255,0.6);	
+			color: rgba(255,255,255,0.6);
 		}
 		&:hover {
-			color: rgba(255,255,255,1);	
+			color: rgba(255,255,255,1);
 		}
 
     	}
@@ -347,8 +345,8 @@ section {
 	background-color: #C71A1A;
 }
 
-.button-green {
-	background-color: #00EC00;
+.button-gray {
+	background-color: #999999;
 }
 
 .button-danger-red {
@@ -384,6 +382,8 @@ section {
 
 .button-login {
 	border: 1px solid #fff;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 body {
