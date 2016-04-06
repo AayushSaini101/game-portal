@@ -87,7 +87,8 @@ $(document).ready(function(){
 				public: /false/,
 				fullname: /\S+/,
 				username: /\S+/,
-				password: /\S+/
+				password: /\S+/,
+				redirect: new RegExp("https://accounts.sdslabs.co.in")
 			}
 			console.log(formData);
 			formData.map(function(ele) {
@@ -105,22 +106,50 @@ $(document).ready(function(){
 					$(self).removeClass('button-red');
 					$(self).addClass('button-green');
 					$(self).html("SUCCESS");
+					$(form).trigger('success', data)
 				})
 				.fail(function(data) {
 					$(self).removeClass('button-red');
 					$(self).addClass('button-danger-red');
 					$(self).html("FAILED");
+					$(form).trigger('failure', data)
 				});
 			}
 		});
 	})(jQuery);
 
 	(function($) {
-		$(".button-login").on("click", function() {
-			var form = $('<form class="login-form center" action="https://accounts.sdslabs.co.in/login"></form>');
+		$(".button-login").on("click", function(e) {
+			var form = $('<form class="login-form center" action="https://accounts.sdslabs.co.in/login?redirect=http://game.sdslabs.co.in/"></form>');
 			form.append('<input type="text" name="username" class="form-control input-white-border" placeholder="USERNAME">');
 			form.append('<input type="password" name="password" class="form-control input-white-border" placeholder="PASSWORD">');
+			form.append('<input type="hidden" id="redirect" name="redirect" value="https://accounts.sdslabs.co.in">');
+			form.append('<a class="" href="https://accounts.sdslabs.co.in/register">New user? Sign up here</a>')
 			form.append('<div class="bold center button submit-button button-red">LOGIN</div>');
+			form.append('<div class="info"></div>');
+			form.on('success', function(e, data) {
+				if(~data.indexOf("No such user exists.")) {
+					form.find(".info").html("No such user exists.");
+					form.find(".submit-button").html("Login");
+					form.find(".submit-button").removeClass("button-green");
+					form.find(".submit-button").addClass("button-red");
+				}
+				else if (~data.indexOf("Incorrect password for this user")) {
+					form.find(".info").html("Incorrect Password");
+					form.find(".submit-button").removeClass("button-green");
+					form.find(".submit-button").addClass("button-red");
+				}
+				else
+					form.remove();
+			});
+			form.on('failure', function(e, data) {
+				form.find(".info").html("Some problem occured. Try later");
+			});
+			$(document).on('mousedown', function(e) {
+				var form = $(".login-form");
+				if(!form.is(e.target))
+					form.remove();
+			});
 			$(this).parent().append(form);
 		});
 	})(jQuery);

@@ -208,6 +208,18 @@ section {
 			border-bottom: 1px solid rgba(255,255,255,0.6);
 		}
 	}
+	a {
+		margin: 10px auto;
+		display: inherit;
+		color: blue;
+	}
+	.info {
+		margin: 10px;
+		font-style: italic;
+	}
+	.info:not(:empty):before {
+		content: '*'
+	}
 	.submit-button {
 		margin-top: 20px;
 		margin-bottom: 20px;
