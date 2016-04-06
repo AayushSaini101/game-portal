@@ -28,7 +28,6 @@ $(document).ready(function(){
 			$('.header-ideas').css('opacity', 0);
 		}
 
-
 		if(scroll < scroll_games){
 			$('li').removeClass("active");
 			$(".first").addClass("active");
@@ -40,38 +39,6 @@ $(document).ready(function(){
 		else {
 			$('li').removeClass("active");
 			$(".second").addClass("active");
-		}
-	});
-
-	function getSection(){
-		var scroll = $(window).scrollTop()
-		if(scroll < scroll_games){
-			return 1;
-		}
-		else if(scroll >= scroll_ideas){
-			return 3;
-		}
-		else {
-			return 2;
-		}
-	}
-
-	$(document).keydown(function(e){
-		if(e.keyCode == 39){
-			if(getSection() == 1) {
-				$(window).scrollTo($('#games'),1000);
-			}
-			else if (getSection() == 2){
-				$(window).scrollTo($('#ideas'),1000);
-			}
-		}
-		else if(e.keyCode == 37){
-			if(getSection() == 2) {
-				$(window).scrollTo($('#home'),1000);
-			}
-			else if (getSection() == 3){
-				$(window).scrollTo($('#games'),1000);
-			}
 		}
 	});
 
@@ -220,10 +187,6 @@ $(document).ready(function(){
 			});
 			$(this).parent().append(form);
 		});
-	})(jQuery);
-
-	(function($) {
-		$('.button-')
 	})(jQuery);
 
 	(function($) {
