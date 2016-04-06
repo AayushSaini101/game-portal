@@ -60,17 +60,27 @@ $(document).ready(function(){
 	});
 	//$('.poplight').offset().top
 	(function($) {
-		$.get("https://accounts.sdslabs.co.in/info", function(data) {
-			if(data.loggein) {
-				$('.button-login').html(data.name)
-				$('.button-login').parent().removeAttr("href");
-				$('.button-login').removeClass("button-transparent");
-				$('[name="fullname"]').val(data.name);
-				$('[name="email"]').val(data.email);
-			} else {
-				$('.button-login').parent().attr('href', "https://accounts.sdslabs.co.in/login?redirect="+window.location.href);
+		$.ajax({
+			url: "https://accounts.sdslabs.co.in/info",
+			type: "GET",
+			dataType: "json",
+			xhrFields: {
+				withCredentials: !0
+			},
+			success: function(data) {
+				console.log(data);
+				if(data.loggedin) {
+					$('.button-login').html(data.name)
+					$('.button-login').parent().removeAttr("href");
+					$('.button-login').removeClass("button-transparent");
+					$('.button-login').removeClass("button-login");
+					$('[name="fullname"]').val(data.name);
+					$('[name="email"]').val(data.email);
+				} else {
+					$('.button-login').parent().attr('href', "https://accounts.sdslabs.co.in/login?redirect="+window.location.href);
+				}
 			}
-		}, "json");
+		});
 	})(jQuery);
 
 	(function($) {
@@ -103,18 +113,28 @@ $(document).ready(function(){
 				$(self).html('<i class="fa fa-circle-o-notch fa-spin"></i>');
 				$.post($(form).attr("action"), $(form).serialize())
 				.done(function(data) {
-					$(self).removeClass('button-red');
-					$(self).addClass('button-green');
-					$(self).html("SUCCESS");
 					$(form).trigger('success', data)
 				})
 				.fail(function(data) {
-					$(self).removeClass('button-red');
-					$(self).addClass('button-danger-red');
-					$(self).html("FAILED");
 					$(form).trigger('failure', data)
 				});
 			}
+		});
+	})(jQuery);
+
+	(function($) {
+		var form = $('.ideas-form');
+		var submitButton = $(form).find('.submit-button');
+		form.on('success', function(e, data) {
+			submitButton.removeClass('button-red');
+			submitButton.addClass('button-green');
+			submitButton.html("SUCCESS");
+		});
+		form.on('failure', function(e, data) {
+			console.log(data);
+			submitButton.removeClass('button-red');
+			submitButton.addClass('button-danger-red');
+			submitButton.html("FAILED");
 		});
 	})(jQuery);
 
@@ -153,5 +173,4 @@ $(document).ready(function(){
 			$(this).parent().append(form);
 		});
 	})(jQuery);
-
 });

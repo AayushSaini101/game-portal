@@ -310,7 +310,7 @@ section {
   width: 200px;
   border: 1px solid; }
 
-.button-login, .button-chat {
+.button-header {
   margin-right: 40px;
   float: right;
   width: 100px;
@@ -320,7 +320,7 @@ section {
   font-weight: 700;
   color: rgba(255, 255, 255, 0.6); }
 
-.button-login:hover, .button-chat:hover {
+.button-header:hover {
   color: white; }
 
 .button-transparent:hover {
@@ -330,8 +330,7 @@ section {
   background-color: rgba(255, 255, 255, 0.5); }
 
 .button-login {
-  border: 1px solid #fff;
-  position: relative; }
+  border: 1px solid #fff; }
 
 body {
   font-family: Source Sans Pro;

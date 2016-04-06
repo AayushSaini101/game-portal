@@ -335,7 +335,7 @@ section {
 	border: 1px solid;
 }
 
-.button-login, .button-chat {
+.button-header {
 	margin-right: 40px;
 	float: right;
 	width: 100px;
@@ -346,7 +346,7 @@ section {
 	color: rgba(255,255,255,0.6);
 }
 
-.button-login:hover, .button-chat:hover {
+.button-header:hover {
 	color: rgb(255,255,255);
 }
 
@@ -360,7 +360,6 @@ section {
 
 .button-login {
 	border: 1px solid #fff;
-	position: relative;
 }
 
 body {
