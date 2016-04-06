@@ -91,8 +91,8 @@ $(document).ready(function(){
 				success: function(data) {
 					console.log(data);
 					if(data.loggedin) {
-						$('.button-login').html(data.name)
-						$('.button-login').parent().removeAttr("href");
+						$('.button-login').unbind("click");
+						$('.button-login').html(data.name);
 						$('.button-login').removeClass("button-transparent");
 						$('.button-login').removeClass("button-login");
 						$('[name="fullname"]').val(data.name);
@@ -112,6 +112,7 @@ $(document).ready(function(){
 			var self = this;
 			var form = $(self).closest('form');
 			var formData = $(form).serializeArray();
+			var credentials = typeof $(form).attr("credentials") == "undefined" ? false : true;
 			var flag = true;
 			var regex = {
 				email: /\S+@\S+\.\S+/,
@@ -134,7 +135,14 @@ $(document).ready(function(){
 			});
 			if(flag) {
 				$(self).html('<i class="fa fa-circle-o-notch fa-spin"></i>');
-				$.post($(form).attr("action"), $(form).serialize())
+				$.ajax({
+					url: $(form).attr("action"),
+					data: $(form).serialize(),
+					type: "POST",
+					xhrFields: {
+						withCredentials: credentials
+					}
+				})
 				.done(function(data) {
 					$(form).trigger('success', data)
 				})
@@ -163,7 +171,8 @@ $(document).ready(function(){
 
 	(function($) {
 		$(".button-login").on("click", function(e) {
-			var form = $('<form class="login-form center" action="https://accounts.sdslabs.co.in/login?redirect=http://game.sdslabs.co.in/"></form>');
+			var self = this;
+			var form = $('<form class="login-form center" action="https://accounts.sdslabs.co.in/login?redirect=http://game.sdslabs.co.in/" credentials></form>');
 			form.append('<input type="text" name="username" class="form-control input-white-border" placeholder="Username">');
 			form.append('<input type="password" name="password" class="form-control input-white-border" placeholder="Password">');
 			form.append('<input type="hidden" id="redirect" name="redirect" value="https://accounts.sdslabs.co.in">');
