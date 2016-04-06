@@ -91,10 +91,12 @@ $(document).ready(function(){
 				success: function(data) {
 					console.log(data);
 					if(data.loggedin) {
-						$('.button-login').unbind("click");
-						$('.button-login').html(data.name);
-						$('.button-login').removeClass("button-transparent");
-						$('.button-login').removeClass("button-login");
+						$('.button-login')
+						  .unbind("click")
+						  .html(data.name)
+						  .removeClass("button-transparent")
+						  .removeClass("button-login")
+						  .addClass("button-username");
 						$('[name="fullname"]').val(data.name);
 						$('[name="email"]').val(data.email);
 					} else {
@@ -150,6 +152,12 @@ $(document).ready(function(){
 					$(form).trigger('failure', data)
 				});
 			}
+		});
+	})(jQuery);
+
+	(function($) {
+		$(document).on("click", ".button-username", function(e) {
+			location = "https://accounts.sdslabs.co.in/"
 		});
 	})(jQuery);
 
@@ -212,6 +220,10 @@ $(document).ready(function(){
 			});
 			$(this).parent().append(form);
 		});
+	})(jQuery);
+
+	(function($) {
+		$('.button-')
 	})(jQuery);
 
 	(function($) {
