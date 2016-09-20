@@ -56,7 +56,6 @@ $(document).ready(function(){
 					withCredentials: !0
 				},
 				success: function(data) {
-					console.log(data);
 					if(data.loggedin) {
 						$('.button-login')
 						  .unbind("click")
