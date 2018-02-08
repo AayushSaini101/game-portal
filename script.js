@@ -45,34 +45,6 @@ $(document).ready(function(){
 	$(".button-explore").click(function(){
 		$(window).scrollTo($("#games"),1000);
 	});
-	//$('.poplight').offset().top
-	function getUserName() {
-		(function($) {
-			$.ajax({
-				url: "https://accounts.sdslabs.co.in/info",
-				type: "GET",
-				dataType: "json",
-				xhrFields: {
-					withCredentials: !0
-				},
-				success: function(data) {
-					if(data.loggedin) {
-						$('.button-login')
-						  .unbind("click")
-						  .html(data.name)
-						  .removeClass("button-transparent")
-						  .removeClass("button-login")
-						  .addClass("button-username");
-						$('[name="fullname"]').val(data.name);
-						$('[name="email"]').val(data.email);
-					} else {
-						$('.button-login').parent().attr('href', "https://accounts.sdslabs.co.in/login?redirect="+window.location.href);
-					}
-				}
-			});
-		})(jQuery);
-	}
-	getUserName();
 
 	(function($) {
 		$(document).on("click", ".submit-button", function(e) {
@@ -87,10 +59,7 @@ $(document).ready(function(){
 				body: /\S+/,
 				app: /Other/,
 				public: /false/,
-				fullname: /\S+/,
-				username: /\S+/,
-				password: /\S+/,
-				redirect: new RegExp("https://accounts.sdslabs.co.in")
+				fullname: /\S+/
 			}
 			console.log(formData);
 			formData.map(function(ele) {
@@ -122,12 +91,6 @@ $(document).ready(function(){
 	})(jQuery);
 
 	(function($) {
-		$(document).on("click", ".button-username", function(e) {
-			location = "https://accounts.sdslabs.co.in/"
-		});
-	})(jQuery);
-
-	(function($) {
 		var form = $('.ideas-form');
 		var submitButton = $(form).find('.submit-button');
 		function formReset() {
@@ -149,42 +112,6 @@ $(document).ready(function(){
 			submitButton.addClass('button-danger-red');
 			submitButton.html("FAILED");
 			setTimeout(formReset, 2000);
-		});
-	})(jQuery);
-
-	(function($) {
-		$(".button-login").on("click", function(e) {
-			var self = this;
-			var form = $('<form class="login-form center" action="https://accounts.sdslabs.co.in/login?redirect=http://game.sdslabs.co.in/" credentials></form>');
-			form.append('<input type="text" name="username" class="form-control input-white-border" placeholder="Username">');
-			form.append('<input type="password" name="password" class="form-control input-white-border" placeholder="Password">');
-			form.append('<input type="hidden" id="redirect" name="redirect" value="https://accounts.sdslabs.co.in">');
-			form.append('<div class="bold center button submit-button button-red">LOGIN</div>');
-			form.append('<a class="" href="https://accounts.sdslabs.co.in/recover/password">Forgot Password</a>')
-			form.append('<a class="" href="https://accounts.sdslabs.co.in/register">Sign Up</a>')
-			form.append('<div class="info"></div>');
-			form.on('success', function(e, data) {
-				if(~data.indexOf("No such user exists.")) {
-					form.find(".info").html("No such user exists.");
-					form.find(".submit-button").html("Login");
-				}
-				else if (~data.indexOf("Incorrect password for this user")) {
-					form.find(".info").html("Incorrect Password");
-				}
-				else {
-					form.remove();
-					getUserName();
-				}
-			});
-			form.on('failure', function(e, data) {
-				form.find(".info").html("Some problem occured. Try later");
-			});
-			$(document).on('mousedown', function(e) {
-				var form = $(".login-form");
-				if(!form.is(e.target) && form.has(e.target).length === 0)
-					form.remove();
-			});
-			$(this).parent().append(form);
 		});
 	})(jQuery);
 
