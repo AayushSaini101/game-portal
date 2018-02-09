@@ -73,8 +73,9 @@ $(document).ready(function(){
 			if(flag) {
 				$(self).html('<i class="fa fa-circle-o-notch fa-spin"></i>');
 				$.ajax({
-					url: $(form).attr("action"),
+					url: "https://formspree.io/contact@sdslabs.co.in",
 					data: $(form).serialize(),
+					datatype: 'json',
 					type: "POST",
 					xhrFields: {
 						withCredentials: credentials
