@@ -43,7 +43,10 @@ $(document).ready(function(){
 	});
 
 	$(".button-explore").click(function(){
-		$(window).scrollTo($("#games"),1000);
+		$('html, body').animate({
+			scrollTop: $("#games").offset().top
+		}, 1000);
+		return false;
 	});
 
 	(function($) {
