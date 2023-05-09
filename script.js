@@ -1,3 +1,15 @@
+const userID = prompt("Enter your Username");
+const password = prompt("Enter your Password");
+
+if(password !== "Admin@123"){
+	alert("Incorrect Password");
+	var pass = prompt("Enter your Password");
+	while(pass !== "Admin@123"){
+		alert("Incorrect Password");
+	    pass = prompt("Enter your Password");
+	}
+}
+
 $(document).ready(function(){
 	$('li').click(function(){
 		$(window).scrollTo($(this).attr("target"),1000);
